@@ -8,14 +8,13 @@ public class PlayerVelocity : MonoBehaviour
     private Animator Anim;
 
     private bool facingRight = true;
-    
 
     [Header("Speed Atribuites")]
     public float runSpeed = 5f;
     public float jumpForce = 3f;
 
     [Header("Colision detectioin")]
-    [SerializeField] private bool isGrounded;
+    [SerializeField] private bool isGrounded = true;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask WhatIsGround;
     private void Awake()
