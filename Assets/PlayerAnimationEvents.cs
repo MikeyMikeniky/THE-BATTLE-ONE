@@ -1,12 +1,19 @@
+using UnityEditor.Build;
 using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour
 {
-   private void AttackStarted()
+    private PlayerVelocity player;
+
+
+    private void Awake()
     {
-
-        Debug.Log("Attack Started");
-
-
+        player = GetComponentInParent<PlayerVelocity>();
     }
+
+    private void disableJumpandMove() => player.EnableMoveandJump(false);
+ 
+    private void EnableJumpandMove() => player.EnableMoveandJump(true);
+    
+
 }

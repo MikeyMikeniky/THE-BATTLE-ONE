@@ -8,6 +8,12 @@ public class PlayerVelocity : MonoBehaviour
     private Animator Anim;
 
     private bool facingRight = true;
+    private bool canMove = true;
+    private bool canJump = true;
+
+
+
+
 
     [Header("Speed Atribuites")]
     public float runSpeed = 5f;
@@ -35,15 +41,23 @@ public class PlayerVelocity : MonoBehaviour
 
     private void handleInput()
     {
-        //Running
-        rb.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * runSpeed, rb.linearVelocity.y);
+        if (canMove)
+        {
+            //Running
+            rb.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * runSpeed, rb.linearVelocity.y);
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
+        }
+        
         //Jumping
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        if (Input.GetButtonDown("Jump") && isGrounded == true && canJump)
         {
             Jump();
-        }
-
+        
+    }
         //Atacking
         if (Input.GetKeyDown(KeyCode.Mouse0) && isGrounded == true)
         {
@@ -52,6 +66,17 @@ public class PlayerVelocity : MonoBehaviour
 
         }
     }
+
+    public void EnableMoveandJump(bool enable)
+    {
+        canJump = enable;
+        canMove = enable; 
+
+    
+    }
+
+
+
     private void Attack()
     {
 
