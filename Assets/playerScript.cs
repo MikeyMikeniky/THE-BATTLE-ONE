@@ -26,20 +26,38 @@ public class PlayerVelocity : MonoBehaviour
     
     private void Update()
     {
-        Walking();
         handeAnimation();
         handleflip();
         handleCoilisons();
+        handleInput();
     }
 
-    private void Walking()
+
+    private void handleInput()
     {
+        //Running
         rb.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * runSpeed, rb.linearVelocity.y);
 
+        //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             Jump();
         }
+
+        //Atacking
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isGrounded == true)
+        {
+            Attack();
+
+
+        }
+    }
+    private void Attack()
+    {
+
+        Anim.SetTrigger("Attack");
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+
     }
     
     private void Jump()

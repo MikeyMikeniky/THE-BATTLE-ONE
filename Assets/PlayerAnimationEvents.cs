@@ -1,0 +1,12 @@
+using UnityEngine;
+
+public class PlayerAnimationEvents : MonoBehaviour
+{
+   private void AttackStarted()
+    {
+
+        Debug.Log("Attack Started");
+
+
+    }
+}
