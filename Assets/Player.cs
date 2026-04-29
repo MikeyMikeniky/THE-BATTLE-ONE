@@ -23,6 +23,19 @@ public class PlayerVelocity : MonoBehaviour
     [SerializeField] private bool isGrounded = true;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask WhatIsGround;
+
+    public Collider2D[] enemyColiders;
+    [Header("Attack Details")]
+    [SerializeField] private float attackRadius;
+    [SerializeField] private LayerMask WhatIsEnemy;
+    [SerializeField] private Transform AttackPoint;
+
+
+
+
+
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +51,13 @@ public class PlayerVelocity : MonoBehaviour
         handleInput();
     }
 
+    public void DamageEnemies()
+    {
+
+        enemyColiders = Physics2D.OverlapCircleAll(AttackPoint.position, attackRadius, WhatIsEnemy);
+    }
+
+    
 
     private void handleInput()
     {
@@ -74,8 +94,6 @@ public class PlayerVelocity : MonoBehaviour
 
     
     }
-
-
 
     private void Attack()
     {
@@ -119,7 +137,7 @@ public class PlayerVelocity : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
-
+        Gizmos.DrawWireSphere(AttackPoint.position, attackRadius);
     }
     private void handleCoilisons()
     {
