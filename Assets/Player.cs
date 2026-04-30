@@ -38,8 +38,8 @@ public class PlayerVelocity : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        Anim = GetComponentInChildren<Animator>();
+        rb = this.GetComponent<Rigidbody2D>();
+        Anim = this.GetComponentInChildren<Animator>();
         
     }
     
@@ -55,6 +55,23 @@ public class PlayerVelocity : MonoBehaviour
     {
 
         enemyColiders = Physics2D.OverlapCircleAll(AttackPoint.position, attackRadius, WhatIsEnemy);
+
+
+
+        foreach (Collider2D enemy in enemyColiders)
+        {
+
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+
+            enemyScript.takeDamage();
+
+
+            string enemyName = enemyScript.GetEnemyName();
+
+            Debug.Log("I damaged:" + enemyScript.enemyName);
+
+        }
+
     }
 
     
