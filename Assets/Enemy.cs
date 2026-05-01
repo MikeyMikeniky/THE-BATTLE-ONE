@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        
+
 
     }
 
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     public void moveAround()
     {
 
-        Debug.Log(enemyName+ "moves at speed" +  moveSpeed);
+        Debug.Log(enemyName + "moves at speed" + moveSpeed);
 
     }
     public virtual void Attack()
