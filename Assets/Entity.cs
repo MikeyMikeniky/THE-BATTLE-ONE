@@ -13,7 +13,7 @@ public class Entity : MonoBehaviour
     protected bool canJump = true;
 
 
-
+    protected int FaceDir = 1;
 
 
     [Header("Speed Atribuites")]
@@ -131,7 +131,7 @@ public class Entity : MonoBehaviour
 
 
     [ContextMenu("flip")]
-    private void handleflip()
+    protected void handleflip()
     {
 
         if (rb.linearVelocity.x > 0 && facingRight == false)
@@ -145,11 +145,12 @@ public class Entity : MonoBehaviour
         }
     }
 
-    private void flip()
+    protected void flip()
     {
 
         transform.Rotate(0, 180, 0);
         facingRight = !facingRight;
+        FaceDir *= -1;
     }
 
 
@@ -165,7 +166,7 @@ public class Entity : MonoBehaviour
 
     }
 
-    private void handeAnimation()
+    protected void handeAnimation()
     { 
         Anim.SetBool("isGrounded", isGrounded);
         Anim.SetFloat("Y velocity", rb.linearVelocity.y);
