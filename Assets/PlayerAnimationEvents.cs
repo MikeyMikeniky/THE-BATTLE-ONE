@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour
 {
-    private PlayerVelocity player;
+    private Entity player;
 
 
     private void Awake()
     {
-        player = GetComponentInParent<PlayerVelocity>();
+        player = GetComponentInParent<Entity>();
     }
 
 
 
-    public void DamageEnemies() => player.DamageEnemies();
+    public void DamageTargets() => player.DamageTargets();
     private void disableJumpandMove() => player.EnableMoveandJump(false);
  
     private void EnableJumpandMove() => player.EnableMoveandJump(true);

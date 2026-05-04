@@ -1,15 +1,16 @@
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerVelocity : MonoBehaviour
+public class Entity : MonoBehaviour
 {
 
-    private Rigidbody2D rb;
-    private Animator Anim;
+    protected Rigidbody2D rb;
+    protected Animator Anim;
 
-    private bool facingRight = true;
-    private bool canMove = true;
-    private bool canJump = true;
+    protected bool facingRight = true;
+    protected bool canMove = true;
+    protected bool canJump = true;
 
 
 
@@ -27,7 +28,7 @@ public class PlayerVelocity : MonoBehaviour
     public Collider2D[] enemyColiders;
     [Header("Attack Details")]
     [SerializeField] private float attackRadius;
-    [SerializeField] private LayerMask WhatIsEnemy;
+    [SerializeField] private LayerMask WhatIsTarget;
     [SerializeField] private Transform AttackPoint;
 
 
@@ -36,14 +37,14 @@ public class PlayerVelocity : MonoBehaviour
 
 
 
-    private void Awake()
+    protected void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
         Anim = this.GetComponentInChildren<Animator>();
         
     }
     
-    private void Update()
+    protected virtual void Update()
     {
         handeAnimation();
         handleflip();
@@ -51,32 +52,32 @@ public class PlayerVelocity : MonoBehaviour
         handleInput();
     }
 
-    public void DamageEnemies()
+    public void DamageTargets()
     {
 
-        enemyColiders = Physics2D.OverlapCircleAll(AttackPoint.position, attackRadius, WhatIsEnemy);
+        enemyColiders = Physics2D.OverlapCircleAll(AttackPoint.position, attackRadius, WhatIsTarget);
 
 
 
         foreach (Collider2D enemy in enemyColiders)
         {
 
-            Enemy enemyScript = enemy.GetComponent<Enemy>();
-
-            enemyScript.takeDamage();
-
-
-            string enemyName = enemyScript.GetEnemyName();
-
-            Debug.Log("I damaged:" + enemyScript.enemyName);
+            Entity EntityTarget = enemy.GetComponent<Entity>();
+            EntityTarget.takeDamage();
 
         }
+    }
+
+    private void takeDamage()
+    {
+
+
 
     }
 
-    
 
-    private void handleInput()
+
+    protected virtual void handleInput()
     {
         if (canMove)
         {
@@ -88,13 +89,21 @@ public class PlayerVelocity : MonoBehaviour
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
         }
-        
+       
+    }
+
+    public void EnableMoveandJump(bool enable)
+    {
+        canJump = enable;
+        canMove = enable;
+      
         //Jumping
+      
         if (Input.GetButtonDown("Jump") && isGrounded == true && canJump)
         {
             Jump();
-        
-    }
+
+        }
         //Atacking
         if (Input.GetKeyDown(KeyCode.Mouse0) && isGrounded == true)
         {
@@ -102,17 +111,10 @@ public class PlayerVelocity : MonoBehaviour
 
 
         }
+
     }
 
-    public void EnableMoveandJump(bool enable)
-    {
-        canJump = enable;
-        canMove = enable; 
-
-    
-    }
-
-    private void Attack()
+    protected virtual void Attack()
     {
 
         Anim.SetTrigger("Attack");
@@ -156,7 +158,7 @@ public class PlayerVelocity : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
         Gizmos.DrawWireSphere(AttackPoint.position, attackRadius);
     }
-    private void handleCoilisons()
+    protected virtual void handleCoilisons()
     {
 
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, WhatIsGround);
