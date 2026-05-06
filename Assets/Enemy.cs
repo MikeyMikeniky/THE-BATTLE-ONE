@@ -2,19 +2,20 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-
-
     public bool playerDetected;
-   
-        
-        
-        protected override void Update()
+
+
+    [Header("Speed Atribuites")]
+    [SerializeField] private float runSpeed = 5f;
+
+    [SerializeField] private int Health = 10;
+
+
+
+
+    protected override void Update()
     {
-        
-        handleflip();
-        handleCoilisons();
-        handleInput();
-        handeAnimation();
+        base.Update();
         Attack();
     }
 
@@ -28,7 +29,7 @@ public class Enemy : Entity
 
     }
 
-    protected override void handleInput()
+    protected override void HandleMovments()
     {
         if (canMove)
         {

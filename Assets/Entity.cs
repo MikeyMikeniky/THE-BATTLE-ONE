@@ -12,24 +12,21 @@ public class Entity : MonoBehaviour
 
     protected bool facingRight = true;
     protected bool canMove = true;
-    protected bool canJump = true;
+ 
 
 
     protected int FaceDir = 1;
     protected int deathHeight = 15;
+    protected int Damage = 1;
 
-
-    [SerializeField] private int Health = 1;
-    [SerializeField] private int CurrentHealth;
+    private int CurrentHealth;
+    private int Health;
     private bool GotHit;
 
-
-    [Header("Speed Atribuites")]
-    public float runSpeed = 5f;
-    public float jumpForce = 3f;
+  
 
     [Header("Colision detectioin")]
-    private bool isGrounded;
+    protected bool isGrounded;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask WhatIsGround;
 
@@ -39,18 +36,12 @@ public class Entity : MonoBehaviour
     [SerializeField] protected LayerMask WhatIsTarget;
     [SerializeField] protected Transform AttackPoint;
 
-
-
-
-
-
-
-    protected void Awake()
+    protected virtual void Awake()
     {
         rb = this.GetComponent <Rigidbody2D>();
         Anim = this.GetComponentInChildren <Animator>();
         col = this.GetComponent <Collider2D>();
-        Health = CurrentHealth;
+        CurrentHealth = Health;
     }
     
     protected virtual void Update()
@@ -58,23 +49,7 @@ public class Entity : MonoBehaviour
         handeAnimation();
         handleflip();
         handleCoilisons();
-        handleInput();
-
-        //Jumping
-
-        if (Input.GetButtonDown("Jump") && isGrounded == true && canJump)
-        {
-            Jump();
-       
-
-        }
-        //Atacking
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isGrounded == true)
-        {
-            Attack();
-
-
-        }
+        HandleMovments();
     }
 
     public virtual void DamageTargets()
@@ -93,31 +68,26 @@ public class Entity : MonoBehaviour
 
     protected void takeDamage()
     {
-        Anim.enabled = false;
-      col.enabled = false;
+        Health -= Damage;
 
-        rb.gravityScale = 12;
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, deathHeight);
+        if (Health <= 0)
+        {
+            rb.gravityScale = 12;
+            rb.linearVelocity = new Vector2(0, deathHeight);
+            Anim.enabled = false;
+            col.enabled = false;
 
-    }
-    protected virtual void handleInput()
-    {
-        if (canMove)
-        {
-            //Running
-            rb.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * runSpeed, rb.linearVelocity.y);
-        }
-        else
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            Destroy(gameObject, 3);
 
         }
-       
     }
-
-    public void EnableMoveandJump(bool enable)
+    protected virtual void HandleMovments()
     {
-        canJump = enable;
+    }
+   
+
+    public virtual void EnableMoveandJump(bool enable)
+    {
         canMove = enable;
     }
 
@@ -129,16 +99,10 @@ public class Entity : MonoBehaviour
 
     }
     
-    private void Jump()
-    {
-
-        rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-
-    }
 
 
     [ContextMenu("flip")]
-    protected void handleflip()
+    protected virtual void handleflip()
     {
 
         if (rb.linearVelocity.x > 0 && facingRight == false)
@@ -164,7 +128,12 @@ public class Entity : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
-        Gizmos.DrawWireSphere(AttackPoint.position, attackRadius);
+
+        if (AttackPoint != null)
+        {
+            Gizmos.DrawWireSphere(AttackPoint.position, attackRadius);
+        }
+      
     }
     protected virtual void handleCoilisons()
     {
