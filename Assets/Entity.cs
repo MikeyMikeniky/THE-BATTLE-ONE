@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class Entity : MonoBehaviour
 
     protected Rigidbody2D rb;
     protected Animator Anim;
+    protected Collider2D col;
 
     protected bool facingRight = true;
     protected bool canMove = true;
@@ -14,6 +16,12 @@ public class Entity : MonoBehaviour
 
 
     protected int FaceDir = 1;
+    protected int deathHeight = 15;
+
+
+    [SerializeField] private int Health = 1;
+    [SerializeField] private int CurrentHealth;
+    private bool GotHit;
 
 
     [Header("Speed Atribuites")]
@@ -21,15 +29,15 @@ public class Entity : MonoBehaviour
     public float jumpForce = 3f;
 
     [Header("Colision detectioin")]
-    [SerializeField] private bool isGrounded = true;
+    private bool isGrounded;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask WhatIsGround;
 
     public Collider2D[] enemyColiders;
     [Header("Attack Details")]
-    [SerializeField] private float attackRadius;
-    [SerializeField] private LayerMask WhatIsTarget;
-    [SerializeField] private Transform AttackPoint;
+    [SerializeField] protected float attackRadius;
+    [SerializeField] protected LayerMask WhatIsTarget;
+    [SerializeField] protected Transform AttackPoint;
 
 
 
@@ -39,9 +47,10 @@ public class Entity : MonoBehaviour
 
     protected void Awake()
     {
-        rb = this.GetComponent<Rigidbody2D>();
-        Anim = this.GetComponentInChildren<Animator>();
-        
+        rb = this.GetComponent <Rigidbody2D>();
+        Anim = this.GetComponentInChildren <Animator>();
+        col = this.GetComponent <Collider2D>();
+        Health = CurrentHealth;
     }
     
     protected virtual void Update()
@@ -50,14 +59,28 @@ public class Entity : MonoBehaviour
         handleflip();
         handleCoilisons();
         handleInput();
+
+        //Jumping
+
+        if (Input.GetButtonDown("Jump") && isGrounded == true && canJump)
+        {
+            Jump();
+       
+
+        }
+        //Atacking
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isGrounded == true)
+        {
+            Attack();
+
+
+        }
     }
 
-    public void DamageTargets()
+    public virtual void DamageTargets()
     {
 
-        enemyColiders = Physics2D.OverlapCircleAll(AttackPoint.position, attackRadius, WhatIsTarget);
-
-
+        Collider2D[] enemyColiders = Physics2D.OverlapCircleAll(AttackPoint.position, attackRadius, WhatIsTarget);
 
         foreach (Collider2D enemy in enemyColiders)
         {
@@ -68,15 +91,15 @@ public class Entity : MonoBehaviour
         }
     }
 
-    private void takeDamage()
+    protected void takeDamage()
     {
+        Anim.enabled = false;
+      col.enabled = false;
 
-
+        rb.gravityScale = 12;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, deathHeight);
 
     }
-
-
-
     protected virtual void handleInput()
     {
         if (canMove)
@@ -96,22 +119,6 @@ public class Entity : MonoBehaviour
     {
         canJump = enable;
         canMove = enable;
-      
-        //Jumping
-      
-        if (Input.GetButtonDown("Jump") && isGrounded == true && canJump)
-        {
-            Jump();
-
-        }
-        //Atacking
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isGrounded == true)
-        {
-            Attack();
-
-
-        }
-
     }
 
     protected virtual void Attack()
@@ -163,10 +170,13 @@ public class Entity : MonoBehaviour
     {
 
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, WhatIsGround);
+       
+        
+        enemyColiders = Physics2D.OverlapCircleAll(AttackPoint.position, attackRadius, WhatIsTarget);
 
     }
 
-    protected void handeAnimation()
+    protected  void handeAnimation()
     { 
         Anim.SetBool("isGrounded", isGrounded);
         Anim.SetFloat("Y velocity", rb.linearVelocity.y);

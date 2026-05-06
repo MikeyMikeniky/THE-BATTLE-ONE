@@ -2,15 +2,31 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    protected override void Update()
+
+
+    public bool playerDetected;
+   
+        
+        
+        protected override void Update()
     {
-        handeAnimation();
+        
         handleflip();
         handleCoilisons();
         handleInput();
+        handeAnimation();
+        Attack();
     }
 
+    protected override void Attack()
+    {
+        if(playerDetected)
+        {
 
+            Anim.SetTrigger("attack");
+        }
+
+    }
 
     protected override void handleInput()
     {
@@ -24,6 +40,16 @@ public class Enemy : Entity
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
         }
+
+    }
+
+
+
+    protected override void handleCoilisons()
+    {
+        
+        playerDetected = Physics2D.OverlapCircle(AttackPoint.position, attackRadius, WhatIsTarget);
+
 
     }
 }

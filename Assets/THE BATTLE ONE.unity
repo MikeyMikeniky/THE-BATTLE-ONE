@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414860514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 536777691}
   - component: {fileID: 536777690}
   - component: {fileID: 536777689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 536777687}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.07, y: -0.91, z: 0}
+  m_LocalPosition: {x: -1.7, y: -1.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -399,15 +399,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3766df0f2fa57548a41c92577876d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerVelocity
+  Health: 1
+  CurrentHealth: 0
   runSpeed: 9
   jumpForce: 12
-  isGrounded: 0
-  groundCheckDistance: 1.14
+  groundCheckDistance: 1.32
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 128
   enemyColiders: []
-  attackRadius: 0.89
+  attackRadius: 1.07
   WhatIsTarget:
     serializedVersion: 2
     m_Bits: 0
@@ -424,7 +425,7 @@ GameObject:
   - component: {fileID: 549672612}
   - component: {fileID: 549672613}
   - component: {fileID: 549672614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +441,7 @@ Transform:
   m_GameObject: {fileID: 549672609}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.52, y: 0.21, z: 0}
+  m_LocalPosition: {x: 0.54, y: 0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -665,6 +666,7 @@ GameObject:
   - component: {fileID: 922042499}
   - component: {fileID: 922042501}
   - component: {fileID: 922042500}
+  - component: {fileID: 922042502}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -768,6 +770,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &922042502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922042498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52e0c4a64e589141835515ef0a174f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_AnimationEvents
 --- !u!1 &1777481052
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,9 +813,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd94f7e756c86ca4983447c034ff0531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  Health: 1
+  CurrentHealth: 0
   runSpeed: 5
   jumpForce: 3
-  isGrounded: 0
   groundCheckDistance: 0.9
   WhatIsGround:
     serializedVersion: 2
@@ -810,8 +825,9 @@ MonoBehaviour:
   attackRadius: 0.88
   WhatIsTarget:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   AttackPoint: {fileID: 603066594}
+  playerDetected: 0
 --- !u!4 &1777481054
 Transform:
   m_ObjectHideFlags: 0
@@ -821,7 +837,7 @@ Transform:
   m_GameObject: {fileID: 1777481052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.32, y: -1.3, z: 0}
+  m_LocalPosition: {x: -6.74, y: -1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -829,34 +845,7 @@ Transform:
   - {fileID: 922042499}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1777481055
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777481052}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 3.52
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!70 &1777481056
+--- !u!70 &1777481055
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -890,9 +879,36 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.05070877, y: -0.020880163}
-  m_Size: {x: 1.2576504, y: 1.6454238}
+  m_Offset: {x: 0.07567811, y: 0.009871006}
+  m_Size: {x: 1.1251702, y: 1.6909776}
   m_Direction: 0
+--- !u!50 &1777481056
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777481052}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 3.39
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &2006672100
 GameObject:
   m_ObjectHideFlags: 0

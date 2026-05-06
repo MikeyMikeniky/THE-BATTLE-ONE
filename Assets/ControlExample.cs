@@ -43,7 +43,17 @@ public class ControlExample : MonoBehaviour
     private void TurnWhite()
     {
         sr.color = Color.white;
+        
+        
+        
+       
+
 
     }
-
 }
+
+
+
+
+
+
