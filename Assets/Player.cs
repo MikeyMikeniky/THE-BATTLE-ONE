@@ -11,6 +11,13 @@ public class Player : Entity
     [SerializeField] private bool canJump = true;
 
 
+
+    protected override void Awake()
+    {
+        base.Awake();
+        Health = 10;
+    }
+
     protected override void Update()
     {
         base.Update();
@@ -18,12 +25,6 @@ public class Player : Entity
        
     }
 
-
-    private void Start()
-    {
-
-        Health = 9;
-}
 
 
     private void handleInput()
@@ -67,7 +68,7 @@ public class Player : Entity
     {
         base.takeDamage();
        
-        if (Health == 1)
+        if (Health == 0)
         {
             UI.instance.EnableGameOverScrene();
         }

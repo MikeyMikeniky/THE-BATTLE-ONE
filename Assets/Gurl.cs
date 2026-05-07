@@ -4,15 +4,12 @@ using UnityEngine;
 public class Gurl : Entity
 {
 
-    [SerializeField] protected int Health = 100;
-
     private Transform player;
 
     protected override void Awake()
     {
         base.Awake();
         player = FindAnyObjectByType<Player>().transform;
-
     }
 
     protected override void Update()
@@ -44,7 +41,7 @@ public class Gurl : Entity
         Health = Health - Damage;
 
 
-        if (Health == 1)
+        if (Health == 0)
         {
             UI.instance.EnableGameOverScrene();
         }

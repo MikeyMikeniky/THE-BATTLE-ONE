@@ -21,7 +21,7 @@ public class Entity : MonoBehaviour
     protected int Damage = 1;
 
     protected int CurrentHealth;
-    protected int Health = 100;
+    public int Health = 100;
     private bool GotHit;
 
   
