@@ -9,10 +9,11 @@ public class Entity : MonoBehaviour
     protected Rigidbody2D rb;
     protected Animator Anim;
     protected Collider2D col;
-
     protected bool facingRight = true;
+   
+    
     protected bool canMove = true;
- 
+
 
 
     protected int FaceDir = 1;
@@ -66,7 +67,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    protected void takeDamage()
+    protected virtual void takeDamage()
     {
         Health -= Damage;
 
@@ -81,6 +82,8 @@ public class Entity : MonoBehaviour
 
         }
     }
+
+
     protected virtual void HandleMovments()
     {
     }

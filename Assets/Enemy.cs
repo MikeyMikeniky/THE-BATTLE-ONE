@@ -53,4 +53,14 @@ public class Enemy : Entity
 
 
     }
+
+
+   protected override void takeDamage()
+    {
+
+        base.takeDamage();
+
+        UI.instance.AddKillCount();
+
+    }
 }
