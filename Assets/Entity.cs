@@ -119,7 +119,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    protected void flip()
+    public void flip()
     {
 
         transform.Rotate(0, 180, 0);

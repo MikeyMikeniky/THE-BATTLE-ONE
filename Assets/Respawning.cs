@@ -1,16 +1,54 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Respawning : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private Transform[] respawnPoints;
+    [SerializeField] private float cooldown = 2.0f;
+    [SerializeField] private float timer;
+
+    [SerializeField] public float coolDownCap = .07f;
+    [SerializeField] public float coolDownDecreaseRate = .05f;
+
+
+    private Transform player;
+
+    private void Awake()
     {
-        
+        player = FindFirstObjectByType<Player>().transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
+        timer -= Time.deltaTime;
+
+
+
+        if(timer < 0)
+        {
+
+            CreateNewEnemy();
+            timer = cooldown;
+            
+        }
+    }
+
+    private void CreateNewEnemy()
+    {
+        int respawnPointsIndex = Random.Range(0, respawnPoints.Length);
+
+        GameObject newEnemy = Instantiate(prefab, respawnPoints[respawnPointsIndex].position, Quaternion.identity);
+
+
+
+        bool CreatedOnTheRight = newEnemy.transform.position.x > transform.position.x;
+
+        if (CreatedOnTheRight)
+        {
+
+            newEnemy.GetComponent<Enemy>().flip();
+        }
     }
 }
