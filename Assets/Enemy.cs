@@ -6,12 +6,15 @@ public class Enemy : Entity
 
 
     [Header("Speed Atribuites")]
-    [SerializeField] private float runSpeed = 5f;
-
-    [SerializeField] private int Health = 10;
+    public float runSpeed = 1;
 
 
-
+    private void Start()
+    {
+   
+            Health = 2;
+        
+    }
 
     protected override void Update()
     {
@@ -19,6 +22,13 @@ public class Enemy : Entity
         Attack();
     }
 
+
+
+    protected override void handeAnimation()
+    {
+        Anim.SetFloat("X velocity", rb.linearVelocity.x);
+
+    }
     protected override void Attack()
     {
         if(playerDetected)
@@ -34,7 +44,7 @@ public class Enemy : Entity
         if (canMove)
         {
             //Running
-            rb.linearVelocity = new Vector2(FaceDir, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(FaceDir * runSpeed, rb.linearVelocity.y);
         }
         else
         {

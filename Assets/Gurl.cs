@@ -4,7 +4,7 @@ using UnityEngine;
 public class Gurl : Entity
 {
 
-    [SerializeField] private int Health = 10;
+    [SerializeField] protected int Health = 100;
 
     private Transform player;
 
@@ -14,7 +14,7 @@ public class Gurl : Entity
         player = FindAnyObjectByType<Player>().transform;
 
     }
-    
+
     protected override void Update()
     {
         handleflip();
@@ -34,5 +34,19 @@ public class Gurl : Entity
             flip();
         }
 
+    }
+
+
+    protected override void takeDamage()
+    {
+        base.takeDamage();
+
+        Health = Health - Damage;
+
+
+        if (Health == 1)
+        {
+            UI.instance.EnableGameOverScrene();
+        }
     }
 }

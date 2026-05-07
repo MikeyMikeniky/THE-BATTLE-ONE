@@ -6,9 +6,10 @@ public class Player : Entity
 
 
     [Header("Physical Atribuites")]
-    [SerializeField] private float runSpeed = 5f;
+    [SerializeField] protected float runSpeed = 5f;
     [SerializeField] public float jumpForce = 3f;
     [SerializeField] private bool canJump = true;
+
 
     protected override void Update()
     {
@@ -16,6 +17,13 @@ public class Player : Entity
         handleInput();
        
     }
+
+
+    private void Start()
+    {
+
+        Health = 9;
+}
 
 
     private void handleInput()
@@ -53,5 +61,15 @@ public class Player : Entity
 
             canJump = enable;
        
+    }
+
+    protected override void takeDamage()
+    {
+        base.takeDamage();
+       
+        if (Health == 1)
+        {
+            UI.instance.EnableGameOverScrene();
+        }
     }
 }

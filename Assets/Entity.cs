@@ -20,8 +20,8 @@ public class Entity : MonoBehaviour
     protected int deathHeight = 15;
     protected int Damage = 1;
 
-    private int CurrentHealth;
-    private int Health;
+    protected int CurrentHealth;
+    protected int Health = 100;
     private bool GotHit;
 
   
@@ -69,9 +69,9 @@ public class Entity : MonoBehaviour
 
     protected virtual void takeDamage()
     {
-        Health -= Damage;
+        Health = Health - Damage;
 
-        if (Health <= 0)
+        if (Health == 0)
         {
             rb.gravityScale = 12;
             rb.linearVelocity = new Vector2(0, deathHeight);
@@ -148,7 +148,7 @@ public class Entity : MonoBehaviour
 
     }
 
-    protected  void handeAnimation()
+    protected virtual void handeAnimation()
     { 
         Anim.SetBool("isGrounded", isGrounded);
         Anim.SetFloat("Y velocity", rb.linearVelocity.y);
