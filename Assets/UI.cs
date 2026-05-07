@@ -6,7 +6,7 @@ public class UI : MonoBehaviour
 {
 
     public GameObject GameOverUI;
-    [Space]
+   
 
     [SerializeField] private TextMeshProUGUI TimerCounter;
     [SerializeField] private TextMeshProUGUI KillCounter;
@@ -29,7 +29,7 @@ public class UI : MonoBehaviour
     }
 
 
-    public void Reset()
+    public void RestartLevel()
     {
 
         int sceenIndex = SceneManager.GetActiveScene().buildIndex;
