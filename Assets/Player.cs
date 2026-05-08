@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-
+using System.Collections;
 public class Player : Entity
 {
 
@@ -63,6 +63,27 @@ public class Player : Entity
             canJump = enable;
        
     }
+
+
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.transform.CompareTag("Enemy"))
+    //    {
+    //        Health -= Damage;
+    //    }
+    //    else
+    //    {
+    //        StartCoroutine(GetHurt());
+    //    }
+    //}
+
+    //private IEnumerator GetHurt()
+    //{
+    //    Physics2D.IgnoreLayerCollision(6, 8, true);
+    //    yield return new WaitForSeconds(3f);
+    //    Physics2D.IgnoreLayerCollision(6, 8, false);
+    //}
 
     protected override void takeDamage()
     {

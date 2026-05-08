@@ -43,7 +43,7 @@ public class Respawning : MonoBehaviour
 
 
 
-        bool CreatedOnTheRight = newEnemy.transform.position.x > transform.position.x;
+        bool CreatedOnTheRight = newEnemy.transform.position.x > player.transform.position.x;
 
         if (CreatedOnTheRight)
         {

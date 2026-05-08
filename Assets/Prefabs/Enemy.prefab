@@ -60,7 +60,7 @@ MonoBehaviour:
     m_Bits: 256
   AttackPoint: {fileID: 7459170889586902635}
   playerDetected: 0
-  runSpeed: 1
+  runSpeed: 1.5
 --- !u!50 &8183845782888964893
 Rigidbody2D:
   serializedVersion: 5

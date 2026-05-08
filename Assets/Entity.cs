@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Entity : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Entity : MonoBehaviour
     protected Animator Anim;
     protected Collider2D col;
     protected bool facingRight = true;
+
+    public bool isDead = false;
    
     
     protected bool canMove = true;
@@ -48,6 +51,13 @@ public class Entity : MonoBehaviour
     protected virtual void Update()
     {
         handeAnimation();
+
+
+        if (isDead)
+        {
+            return;
+        }
+        
         handleflip();
         handleCoilisons();
         HandleMovments();
@@ -71,12 +81,11 @@ public class Entity : MonoBehaviour
     {
         Health = Health - Damage;
 
-        if (Health == 0)
+        if (Health <= 0)
         {
-            rb.gravityScale = 12;
-            rb.linearVelocity = new Vector2(0, deathHeight);
-            Anim.enabled = false;
-            col.enabled = false;
+            isDead = true;
+
+            Anim.SetBool("Death", isDead);
 
             Destroy(gameObject, 3);
 
@@ -108,12 +117,12 @@ public class Entity : MonoBehaviour
     protected virtual void handleflip()
     {
 
-        if (rb.linearVelocity.x > 0 && facingRight == false)
+        if (rb.linearVelocity.x > 0.1f && facingRight == false)
         {
             flip();
         }
        
-        if (rb.linearVelocity.x < 0 && facingRight == true) 
+        if (rb.linearVelocity.x < -0.1f && facingRight == true) 
         {
             flip();
         }
@@ -121,10 +130,13 @@ public class Entity : MonoBehaviour
 
     public void flip()
     {
-
-        transform.Rotate(0, 180, 0);
+        
         facingRight = !facingRight;
         FaceDir *= -1;
+
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 
 
@@ -154,7 +166,6 @@ public class Entity : MonoBehaviour
         Anim.SetFloat("Y velocity", rb.linearVelocity.y);
         Anim.SetFloat("X velocity", rb.linearVelocity.x);
     }
-
 
 }
 

@@ -1173,7 +1173,7 @@ MonoBehaviour:
   respawnPoints:
   - {fileID: 1432979131}
   - {fileID: 852507984}
-  cooldown: 5
+  cooldown: 2
   timer: 2
   coolDownCap: 0.07
   coolDownDecreaseRate: 0.05
@@ -1345,7 +1345,7 @@ GameObject:
   - component: {fileID: 536777691}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1443,14 +1443,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b6709020873c347a4a9e745e62d56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  isDead: 0
   Health: 100
   groundCheckDistance: 1.99
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 128
   enemyColiders: []
-  attackRadius: 1.74
+  attackRadius: 1.04
   WhatIsTarget:
     serializedVersion: 2
     m_Bits: 64
@@ -5234,7 +5233,7 @@ GameObject:
   - component: {fileID: 2118781360}
   m_Layer: 8
   m_Name: Little gurl
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5389,7 +5388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81694f12781bf1144982d5af7a67a720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  isDead: 0
   Health: 100
   groundCheckDistance: 0
   WhatIsGround:

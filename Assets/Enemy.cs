@@ -12,7 +12,7 @@ public class Enemy : Entity
     private void Start()
     {
    
-            Health = 2;
+            Health = 1;
         
     }
 
@@ -34,7 +34,7 @@ public class Enemy : Entity
         if(playerDetected)
         {
 
-            Anim.SetTrigger("attack");
+            Anim.SetTrigger("Attack");
         }
 
     }
@@ -70,7 +70,10 @@ public class Enemy : Entity
 
         base.takeDamage();
 
-        UI.instance.AddKillCount();
-
+        if (Health <= 0)
+        {
+           
+            UI.instance.AddKillCount();
+        }
     }
 }

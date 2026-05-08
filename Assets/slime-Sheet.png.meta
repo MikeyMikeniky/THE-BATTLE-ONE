@@ -1,64 +1,67 @@
 fileFormatVersion: 2
-guid: b1451e9ba9fbcd4489d077bf0d4a7903
+guid: cafd06c9f25658c43a8b77b780d48c69
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2857231490776680268
-    second: Skeleton Dead_0
+      213: 3225832317793331946
+    second: slime-Sheet_0
   - first:
-      213: -4556957111438124803
-    second: Skeleton Dead_1
+      213: 5952692474738800764
+    second: slime-Sheet_1
   - first:
-      213: 8229228023718284102
-    second: Skeleton Dead_2
+      213: 4909821198284645373
+    second: slime-Sheet_2
   - first:
-      213: -6944830649617365068
-    second: Skeleton Dead_3
+      213: 4179155057698957012
+    second: slime-Sheet_3
   - first:
-      213: -1970192786815392063
-    second: Skeleton Dead_4
+      213: -8154299252778131244
+    second: slime-Sheet_4
   - first:
-      213: 2483693351843143494
-    second: Skeleton Dead_5
+      213: 1734891440256307957
+    second: slime-Sheet_5
   - first:
-      213: 6466916566069523921
-    second: Skeleton Dead_6
+      213: 6887022319851403142
+    second: slime-Sheet_6
   - first:
-      213: 3101976986349042786
-    second: Skeleton Dead_7
+      213: 5957987307645184366
+    second: slime-Sheet_7
   - first:
-      213: -926204492896737425
-    second: Skeleton Dead_8
+      213: 121371861024997490
+    second: slime-Sheet_8
   - first:
-      213: -7914734902640995259
-    second: Skeleton Dead_9
+      213: 3146804172381277489
+    second: slime-Sheet_9
   - first:
-      213: -4228536494974795197
-    second: Skeleton Dead_10
+      213: -2200864171832323305
+    second: slime-Sheet_10
   - first:
-      213: -6434160970422584577
-    second: Skeleton Dead_11
+      213: 9207829615066030709
+    second: slime-Sheet_11
   - first:
-      213: 4545027865677980425
-    second: Skeleton Dead_12
+      213: -7380300888587303819
+    second: slime-Sheet_12
   - first:
-      213: -6589485293158612270
-    second: Skeleton Dead_13
+      213: 4993349697702114157
+    second: slime-Sheet_13
   - first:
-      213: 7046719443616025468
-    second: Skeleton Dead_14
+      213: 3913231095913793702
+    second: slime-Sheet_14
   - first:
-      213: -8648105759978941398
-    second: Skeleton Dead_15
+      213: 4811920900910276441
+    second: slime-Sheet_15
   - first:
-      213: -5781592100170912744
-    second: Skeleton Dead_16
+      213: -7772930111310310504
+    second: slime-Sheet_16
   - first:
-      213: 2310587260497813281
-    second: Skeleton Dead_17
+      213: -4570960877372392886
+    second: slime-Sheet_17
   - first:
-      213: 2198027132570139386
-    second: Skeleton Dead_18
+      213: 1577109790741768683
+    second: slime-Sheet_18
+  - first:
+      213: -2658792678680092322
+    second: slime-Sheet_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 12
+  spritePixelsToUnits: 11
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -167,13 +170,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton Dead_0
+      name: slime-Sheet_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 0
-        width: 22
-        height: 32
+        x: 0
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b8323fe8131958d0800000000000000
-      internalID: -2857231490776680268
+      spriteID: aeaeb0fd66574cc20800000000000000
+      internalID: 3225832317793331946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_1
+      name: slime-Sheet_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 25
-        height: 32
+        x: 32
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df85a04a6af62c0c0800000000000000
-      internalID: -4556957111438124803
+      spriteID: c7872fd54463c9250800000000000000
+      internalID: 5952692474738800764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_2
+      name: slime-Sheet_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 0
-        width: 25
-        height: 32
+        x: 64
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64b0b698947143270800000000000000
-      internalID: 8229228023718284102
+      spriteID: df36072dd50332440800000000000000
+      internalID: 4909821198284645373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_3
+      name: slime-Sheet_3
       rect:
         serializedVersion: 2
-        x: 103
-        y: 0
-        width: 26
-        height: 32
+        x: 96
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +251,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b7cf48c1510f9f90800000000000000
-      internalID: -6944830649617365068
+      spriteID: 4d66c6302675ff930800000000000000
+      internalID: 4179155057698957012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_4
+      name: slime-Sheet_4
       rect:
         serializedVersion: 2
-        x: 136
-        y: 0
-        width: 26
-        height: 32
+        x: 128
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +273,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c6e4d2591878a4e0800000000000000
-      internalID: -1970192786815392063
+      spriteID: 4d02ded680c16de80800000000000000
+      internalID: -8154299252778131244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_5
+      name: slime-Sheet_5
       rect:
         serializedVersion: 2
-        x: 169
-        y: 0
-        width: 26
-        height: 32
+        x: 160
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +295,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64f1c9fb1f9d77220800000000000000
-      internalID: 2483693351843143494
+      spriteID: 5f2d754b292931810800000000000000
+      internalID: 1734891440256307957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_6
+      name: slime-Sheet_6
       rect:
         serializedVersion: 2
-        x: 202
-        y: 0
-        width: 26
-        height: 32
+        x: 192
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,20 +317,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d5b9a88a5a1fb950800000000000000
-      internalID: 6466916566069523921
+      spriteID: 687fde69f4e939f50800000000000000
+      internalID: 6887022319851403142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_8
+      name: slime-Sheet_7
       rect:
         serializedVersion: 2
-        x: 236
-        y: 0
-        width: 25
-        height: 32
+        x: 224
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,20 +339,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f67e483cbe57523f0800000000000000
-      internalID: -926204492896737425
+      spriteID: e692a78b3e50fa250800000000000000
+      internalID: 5957987307645184366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_10
+      name: slime-Sheet_8
       rect:
         serializedVersion: 2
-        x: 269
-        y: 0
-        width: 23
-        height: 31
+        x: 0
+        y: 25
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,20 +361,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 342804926783155c0800000000000000
-      internalID: -4228536494974795197
+      spriteID: 2708f1680133fa100800000000000000
+      internalID: 121371861024997490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_13
+      name: slime-Sheet_9
       rect:
         serializedVersion: 2
-        x: 300
-        y: 0
-        width: 25
-        height: 32
+        x: 32
+        y: 25
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,20 +383,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d2ce98d9027d84a0800000000000000
-      internalID: -6589485293158612270
+      spriteID: 13dc088e8b1bbab20800000000000000
+      internalID: 3146804172381277489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_14
+      name: slime-Sheet_10
       rect:
         serializedVersion: 2
-        x: 333
-        y: 0
-        width: 25
-        height: 32
+        x: 64
+        y: 25
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,20 +405,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7b4294bff9fac160800000000000000
-      internalID: 7046719443616025468
+      spriteID: 713dc0742b5f471e0800000000000000
+      internalID: -2200864171832323305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_15
+      name: slime-Sheet_11
       rect:
         serializedVersion: 2
-        x: 366
-        y: 0
-        width: 26
-        height: 32
+        x: 96
+        y: 25
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,20 +427,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a24127481a1cbf780800000000000000
-      internalID: -8648105759978941398
+      spriteID: 572255eef38c8cf70800000000000000
+      internalID: 9207829615066030709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_16
+      name: slime-Sheet_12
       rect:
         serializedVersion: 2
-        x: 395
-        y: 0
-        width: 31
-        height: 32
+        x: 128
+        y: 25
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,20 +449,86 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 81cab19fd98a3cfa0800000000000000
-      internalID: -5781592100170912744
+      spriteID: 5740140c177e39990800000000000000
+      internalID: -7380300888587303819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_17
+      name: slime-Sheet_13
       rect:
         serializedVersion: 2
-        x: 428
+        x: 160
+        y: 25
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63b6da1811fb4540800000000000000
+      internalID: 4993349697702114157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 25
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a844f3d2f69e4630800000000000000
+      internalID: 3913231095913793702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 25
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95fd802909067c240800000000000000
+      internalID: 4811920900910276441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 32
-        height: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,20 +537,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12fd3841fdad01020800000000000000
-      internalID: 2310587260497813281
+      spriteID: 893596b1f31012490800000000000000
+      internalID: -7772930111310310504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Dead_18
+      name: slime-Sheet_17
       rect:
         serializedVersion: 2
-        x: 461
+        x: 32
         y: 0
-        width: 31
-        height: 32
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -490,8 +559,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afa738b0806f08e10800000000000000
-      internalID: 2198027132570139386
+      spriteID: a4ab20ecc4fa090c0800000000000000
+      internalID: -4570960877372392886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be924f0bff403e510800000000000000
+      internalID: 1577109790741768683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e512dd745221a1bd0800000000000000
+      internalID: -2658792678680092322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b2e3febc72db34fb57c462461bcf48
+      internalID: 1704621943
       vertices: []
       indices: 
       edges: []
@@ -500,7 +635,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 690b29026f3e5ce47ad9e831d2588dff
+    spriteID: fea5256a5cff9a94ab1242fde433c6ae
     internalID: 0
     vertices: []
     indices: 
@@ -510,27 +645,29 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":22.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.3499999940395355,"y":0.4699999988079071},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":25.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Skeleton Dead_0: -2857231490776680268
-      Skeleton Dead_1: -4556957111438124803
-      Skeleton Dead_10: -4228536494974795197
-      Skeleton Dead_11: -6434160970422584577
-      Skeleton Dead_12: 4545027865677980425
-      Skeleton Dead_13: -6589485293158612270
-      Skeleton Dead_14: 7046719443616025468
-      Skeleton Dead_15: -8648105759978941398
-      Skeleton Dead_16: -5781592100170912744
-      Skeleton Dead_17: 2310587260497813281
-      Skeleton Dead_18: 2198027132570139386
-      Skeleton Dead_2: 8229228023718284102
-      Skeleton Dead_3: -6944830649617365068
-      Skeleton Dead_4: -1970192786815392063
-      Skeleton Dead_5: 2483693351843143494
-      Skeleton Dead_6: 6466916566069523921
-      Skeleton Dead_7: 3101976986349042786
-      Skeleton Dead_8: -926204492896737425
-      Skeleton Dead_9: -7914734902640995259
+      slime-Sheet_0: 3225832317793331946
+      slime-Sheet_1: 5952692474738800764
+      slime-Sheet_10: -2200864171832323305
+      slime-Sheet_11: 9207829615066030709
+      slime-Sheet_12: -7380300888587303819
+      slime-Sheet_13: 4993349697702114157
+      slime-Sheet_14: 3913231095913793702
+      slime-Sheet_15: 4811920900910276441
+      slime-Sheet_16: -7772930111310310504
+      slime-Sheet_17: -4570960877372392886
+      slime-Sheet_18: 1577109790741768683
+      slime-Sheet_19: -2658792678680092322
+      slime-Sheet_2: 4909821198284645373
+      slime-Sheet_20: 1704621943
+      slime-Sheet_3: 4179155057698957012
+      slime-Sheet_4: -8154299252778131244
+      slime-Sheet_5: 1734891440256307957
+      slime-Sheet_6: 6887022319851403142
+      slime-Sheet_7: 5957987307645184366
+      slime-Sheet_8: 121371861024997490
+      slime-Sheet_9: 3146804172381277489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
