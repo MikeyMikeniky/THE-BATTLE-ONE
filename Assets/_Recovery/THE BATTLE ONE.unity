@@ -1359,7 +1359,7 @@ Transform:
   m_GameObject: {fileID: 536777687}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.49, y: -0.81, z: 0}
+  m_LocalPosition: {x: -4.84, y: -0.59, z: 0}
   m_LocalScale: {x: 1.43, y: 1.43, z: 1.43}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1443,6 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b6709020873c347a4a9e745e62d56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  isDead: 0
   Health: 100
   groundCheckDistance: 1.99
   WhatIsGround:
@@ -5388,6 +5389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81694f12781bf1144982d5af7a67a720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  isDead: 0
   Health: 100
   groundCheckDistance: 0
   WhatIsGround:
