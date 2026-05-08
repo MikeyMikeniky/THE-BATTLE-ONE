@@ -4,16 +4,47 @@ public class Enemy : Entity
 {
     public bool playerDetected;
 
+    private Respawning resp;
 
     [Header("Speed Atribuites")]
     public float runSpeed = 1;
 
-
     private void Start()
     {
-   
-            Health = 1;
-        
+        resp = FindFirstObjectByType<Respawning>();
+
+        Health = 1;
+
+        if (Time.time > 30)
+        {
+            if (resp != null)
+            {
+                resp.cooldown = 1.5f;
+            }
+
+            Health = 2;
+        }
+
+        if (Time.time > 60)
+        {
+            Damage = 2;
+        }
+
+        if (Time.time > 90)
+        {
+            if (resp != null)
+            {
+                resp.cooldown = 1f;
+            }
+        }
+
+        if (Time.time > 120)
+        {
+            if (resp != null)
+            {
+                resp.cooldown = 0.01f;
+            }
+        }
     }
 
     protected override void Update()

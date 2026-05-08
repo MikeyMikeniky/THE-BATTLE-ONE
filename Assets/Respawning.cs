@@ -5,7 +5,7 @@ public class Respawning : MonoBehaviour
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private Transform[] respawnPoints;
-    [SerializeField] private float cooldown = 2.0f;
+    public float cooldown = 2.0f;
     [SerializeField] private float timer;
 
     [SerializeField] public float coolDownCap = .07f;
